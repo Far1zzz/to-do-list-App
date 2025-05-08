@@ -47,6 +47,12 @@ class SelectDateTime extends ConsumerWidget {
     TimeOfDay? pickedTime = await showTimePicker(
       context: context,
       initialTime: TimeOfDay.now(),
+      builder: (BuildContext context, Widget? child) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: false),
+          child: child!,
+        );
+      },
     );
 
     if (pickedTime != null) {
@@ -60,8 +66,8 @@ class SelectDateTime extends ConsumerWidget {
     DateTime? pickDate = await showDatePicker(
       context: context,
       initialDate: initialDate,
-      firstDate: DateTime(2024),
-      lastDate: DateTime(2090),
+      firstDate: DateTime(2023),
+      lastDate: DateTime(2060),
     );
     if (pickDate != null) {
       ref.read(dateProvider.notifier).state = pickDate;
