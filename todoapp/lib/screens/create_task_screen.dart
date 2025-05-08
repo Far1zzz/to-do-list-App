@@ -90,7 +90,7 @@ class _CreateTaskScreenState extends ConsumerState<CreateTaskScreen> {
         time: Helpers.timeToString(time),
         date: DateFormat.yMMMd().format(date),
         category: category,
-        isComplated: false,
+        isCompleted: false,
       );
 
       await ref.read(taskProvider.notifier).createTask(task);

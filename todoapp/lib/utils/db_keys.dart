@@ -12,5 +12,5 @@ class DBKeys {
   static const String timeColumn = TaskKeys.time;
   static const String dateColumn = TaskKeys.date;
   static const String categoryColumn = TaskKeys.category;
-  static const String isComplatedColumn = TaskKeys.isComplated;
+  static const String isCompletedColumn = TaskKeys.isCompleted;
 }

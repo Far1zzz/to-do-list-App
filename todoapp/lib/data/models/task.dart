@@ -8,7 +8,7 @@ class Task extends Equatable {
   final String time;
   final String date;
   final TaskCategories category;
-  final bool isComplated;
+  final bool isCompleted;
   const Task({
     this.id,
     required this.title,
@@ -16,7 +16,7 @@ class Task extends Equatable {
     required this.time,
     required this.date,
     required this.category,
-    required this.isComplated,
+    required this.isCompleted,
   });
 
   @override
@@ -27,7 +27,7 @@ class Task extends Equatable {
       note,
       time,
       date,
-      isComplated,
+      isCompleted,
     ];
   }
 
@@ -39,7 +39,7 @@ class Task extends Equatable {
       TaskKeys.time: time,
       TaskKeys.date: date,
       TaskKeys.category: category.name,
-      TaskKeys.isComplated: isComplated ? 1 : 0,
+      TaskKeys.isCompleted: isCompleted ? 1 : 0,
     };
   }
 
@@ -51,7 +51,7 @@ class Task extends Equatable {
       time: map[TaskKeys.time],
       date: map[TaskKeys.date],
       category: TaskCategories.stringToCategory(map[TaskKeys.category]),
-      isComplated: map[TaskKeys.isComplated] == 1 ? true : false,
+      isCompleted: map[TaskKeys.isCompleted] == 1 ? true : false,
     );
   }
 
@@ -62,7 +62,7 @@ class Task extends Equatable {
     String? time,
     String? date,
     TaskCategories? category,
-    bool? isComplated,
+    bool? isCompleted,
   }) {
     return Task(
       id: id ?? this.id,
@@ -71,7 +71,7 @@ class Task extends Equatable {
       time: time ?? this.time,
       date: date ?? this.date,
       category: category ?? this.category,
-      isComplated: isComplated ?? this.isComplated,
+      isCompleted: isCompleted ?? this.isCompleted,
     );
   }
 }

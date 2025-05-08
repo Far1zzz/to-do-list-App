@@ -10,5 +10,5 @@ class TaskKeys {
   static const String time = 'time';
   static const String date = 'date';
   static const String category = 'category';
-  static const String isComplated = 'isComplated';
+  static const String isCompleted = 'isCompleted';
 }

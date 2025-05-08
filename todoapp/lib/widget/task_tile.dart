@@ -13,11 +13,11 @@ class TaskTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final style = context.textTheme;
-    final double iconOpacity = task.isComplated ? 0.3 : 0.5;
-    final backgroundOpacity = task.isComplated ? 0.1 : 0.3;
+    final double iconOpacity = task.isCompleted ? 0.3 : 0.5;
+    final backgroundOpacity = task.isCompleted ? 0.1 : 0.3;
     final textDecoration =
-        task.isComplated ? TextDecoration.lineThrough : TextDecoration.none;
-    final fontWeight = task.isComplated ? FontWeight.normal : FontWeight.bold;
+        task.isCompleted ? TextDecoration.lineThrough : TextDecoration.none;
+    final fontWeight = task.isCompleted ? FontWeight.normal : FontWeight.bold;
 
     return Padding(
       padding: const EdgeInsets.only(
@@ -57,7 +57,7 @@ class TaskTile extends StatelessWidget {
               ],
             ),
           ),
-          Checkbox(value: task.isComplated, onChanged: onCompleted)
+          Checkbox(value: task.isCompleted, onChanged: onCompleted)
         ],
       ),
     );
